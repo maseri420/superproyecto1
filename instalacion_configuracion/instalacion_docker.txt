@@ -1,0 +1,12 @@
+1º
+Para asegurar que se usa el docker oficial borramos cualquier cosita que podamos tener de docker
+
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+si te indica que no existe eso para borrarlo esta flama
+
+2º instalamos paquetes necesarios
+
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+
+3º
