@@ -1,0 +1,10 @@
+debido a que para hacer cosas dentro de un contendor este tiene que estar ejecutandose nos puede dar
+problemas desde la terminal original por ello ejecutaremos todos los comando por ssh con una aplicacion
+llamada putty donde lo unico que tienes que hacer es poner la ip del dispositivo aqui 
+
+fotito 
+
+asi se mira la ip 
+
+fotito 
+
