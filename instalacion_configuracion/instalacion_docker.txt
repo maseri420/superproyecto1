@@ -1,12 +1,39 @@
-1º
-Para asegurar que se usa el docker oficial borramos cualquier cosita que podamos tener de docker
+1º Para asegurar que se usa el docker oficial borramos cualquier cosita que podamos tener de docker
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
 si te indica que no existe eso para borrarlo esta flama
 
-2º instalamos paquetes necesarios
+2º Realizamos un update
 
-sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+sudo apt update
 
-3º
+3º instalamos paquetes necesarios
+
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+4º Aregamos el repositorio de dockera las fuentes APT:
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+
+5º volvemos a hacer un update
+
+6º Asegúrese de que va a instalar
+desde el repositorio de Docker en vez del repositorio de Ubuntu predeterminado
+
+apt-cache policy docker-ce
+
+7º instalamos docker:
+
+sudo apt install docker-ce
+
+8º verificacion de que este ejecutado:
+
+sudo systemctl status docker
+
+nos saldra algo como (Mirar word)
+
+
+cualquier duda
+
+https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-18-04-1-es

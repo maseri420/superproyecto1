@@ -1,0 +1,37 @@
+https://aulasoftwarelibre.github.io/taller-de-docker/wordpress/
+
+1º Instalaremos el gestor de base de datos MariaDB debido a que es el mas fiable aunque 
+tambien aguanta MySQL
+
+docker run -d --name wordpress-db \
+    --mount source=wordpress-db,target=/var/lib/mysql \
+    -e MYSQL_ROOT_PASSWORD=secret \
+    -e MYSQL_DATABASE=wordpress \
+    -e MYSQL_USER=manager \
+    -e MYSQL_PASSWORD=secret mariadb:10.3.9 
+IMPORTANTE DONDE PONE MSQL_USER Y MSQL_PASSWORD poner en user tu usuario y en password tu contraseña
+o la que quieras para el docker.
+Se te descargara la imagen (mirar word)
+
+3º Con docker ps miramos el contendor ya creado.(Necisitamos una base de datos para docker)
+
+docker ps 
+
+4º Vamos a crear el contenedor de docker pero ahora ademas vamos a conectarlo con la base 
+de datos entonces vamos a crear un directorio donde meteremos el contenedor con wordpress
+instalado.
+
+mkdir -p ~/Sites/wordpress/target && cd ~/Sites/wordpress
+
+5º instalamos docker 
+
+docker run -d --name wordpress \
+    --link wordpress-db:mysql \
+    --mount type=bind,source="$(pwd)"/target,target=/var/www/html \
+    -e WORDPRESS_DB_USER=manager \
+    -e WORDPRESS_DB_PASSWORD=secret \
+    -p 8080:80 \
+    wordpress:4.9.8
+
+IMPORTANTE DONDE PONE WORDPRESS_DB_USER Y WORDPRESS_DB _PASSWORD poner en user tu usuario y en password tu contraseña
+o la que quieras para el docker.
