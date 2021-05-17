@@ -1,0 +1,5 @@
+1º 
+poner la red en adaptador puente 
+2º
+MariaDB gestor de base de datos para el wordpress solo furula esta.
+

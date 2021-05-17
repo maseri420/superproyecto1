@@ -1,0 +1,13 @@
+1º miramos el contenedor que queremos ejecutar en este caso sera el de wordpress.
+
+sudo docker ps
+
+2º despues miraremos la ip del contenedor para poder acceder a wordpress de manera grafica para ello.
+
+sudo docker inspect (El id del contenedor)
+
+Nos saldra un testaco pero al final del todo no saldra lo siguiente
+
+foto 
+
+3º poner la ip en el navegador.
